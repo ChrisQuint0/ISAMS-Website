@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISAMS — Integrated Smart Academic Management System</title>
+  <meta name="description"
+    content="Download ISAMS, the all-in-one operations hub for PLP-CCS. Thesis archiving, faculty requirements, student violations, and laboratory management — all in one place." />
+
+  <!-- Lucide icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- Ambient gradient background -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <header class="navbar" role="banner">
+    <div class="container navbar-inner">
+
+      <!-- Logo -->
+      <a href="#" class="nav-logo" aria-label="ISAMS Home">
+        <img src="assets/isams_logo.svg" alt="ISAMS Logo" width="30" height="30" />
+        <span class="nav-logo-text">ISAMS</span>
+      </a>
+
+      <!-- Actions -->
+      <nav class="nav-actions" aria-label="Primary navigation">
+        <button id="btn-contributors" class="btn-ghost" aria-haspopup="dialog" aria-controls="modal-contributors">
+          <i data-lucide="users"></i>
+          Contributors
+        </button>
+        <a href="#" class="btn-primary" id="btn-download">
+          <i data-lucide="download"></i>
+          <span class="btn-text">Download</span>
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN
+  ============================================================ -->
+  <main class="page-main" id="main-content">
+    <div class="container page-inner">
+
+
+      <!-- ── TWO-COLUMN GRID ────────────────────────────────────── -->
+      <!-- Left = title + sub + bento  |  Right = window (top aligns with h1) -->
+      <div class="content-grid" aria-label="Module preview">
+
+        <!-- LEFT COL -->
+        <div class="left-col">
+
+          <!-- Animated heading/sub block -->
+          <div class="hero-dynamic" id="hero-dynamic">
+            <h1 class="hero-title" id="hero-title">Integrated Smart Academic Management System</h1>
+            <p class="hero-sub" id="hero-sub">
+              The all-in-one operations hub for PLP-CCS. ISAMS brings order and integrity to college
+              administration, ensuring every requirement and milestone is tracked and accessible.
+            </p>
+          </div>
+
+          <!-- Bento module selector -->
+          <aside class="bento-panel" aria-label="Module selector">
+
+            <button class="bento-btn-home active" id="bento-home" data-module="home" aria-pressed="true"
+              aria-label="View Home">
+              <i data-lucide="layout-dashboard"></i>
+              Home
+            </button>
+
+            <div class="bento-grid" role="group" aria-label="Module buttons">
+
+              <button class="bento-card" id="bento-thesis" data-module="thesis" aria-pressed="false"
+                aria-label="View Thesis / HTE Archiving module">
+                <div class="bento-icon-wrap"><i data-lucide="folder-open"></i></div>
+                <span class="bento-label">Thesis / HTE<br>Archiving</span>
+              </button>
+
+              <button class="bento-card" id="bento-faculty" data-module="faculty" aria-pressed="false"
+                aria-label="View Faculty Requirement Submission module">
+                <div class="bento-icon-wrap"><i data-lucide="clipboard-check"></i></div>
+                <span class="bento-label">Faculty Requirement<br>Submission</span>
+              </button>
+
+              <button class="bento-card" id="bento-violations" data-module="violations" aria-pressed="false"
+                aria-label="View Student Violation Management module">
+                <div class="bento-icon-wrap"><i data-lucide="users-round"></i></div>
+                <span class="bento-label">Student Violation<br>Management</span>
+              </button>
+
+              <button class="bento-card" id="bento-lab" data-module="lab" aria-pressed="false"
+                aria-label="View Laboratory Management module">
+                <div class="bento-icon-wrap"><i data-lucide="monitor-dot"></i></div>
+                <span class="bento-label">Laboratory<br>Management</span>
+              </button>
+
+            </div><!-- /.bento-grid -->
+          </aside>
+
+        </div><!-- /.left-col -->
+
+        <!-- RIGHT COL — window top aligns with h1 -->
+        <div class="right-col">
+          <div class="window-container" role="img" aria-label="Application preview window" aria-live="polite">
+
+            <!-- macOS-style title bar -->
+            <div class="window-titlebar" aria-hidden="true">
+              <div class="window-dots">
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+              </div>
+              <span class="window-title-text" id="window-title-text">ISAMS — Dashboard</span>
+            </div>
+
+            <!-- Screenshot images (stacked, cross-fade, horizontally scrollable) -->
+            <div class="window-body">
+              <div class="window-scroll-inner">
+                <img class="window-screenshot visible" id="ss-home" src="assets/home.png"
+                  alt="ISAMS main dashboard preview" loading="eager" draggable="false" />
+                <img class="window-screenshot" id="ss-thesis" src="assets/thesis.png"
+                  alt="Thesis / HTE Archiving module preview" loading="lazy" draggable="false" />
+                <img class="window-screenshot" id="ss-faculty" src="assets/fac.png"
+                  alt="Faculty Requirement Submission module preview" loading="lazy" draggable="false" />
+                <img class="window-screenshot" id="ss-violations" src="assets/vio.png"
+                  alt="Student Violation Management module preview" loading="lazy" draggable="false" />
+                <img class="window-screenshot" id="ss-lab" src="assets/lab.png"
+                  alt="Laboratory Management module preview" loading="lazy" draggable="false" />
+              </div>
+            </div>
+
+          </div><!-- /.window-container -->
+        </div><!-- /.right-col -->
+
+      </div><!-- /.content-grid -->
+
+    </div><!-- /.page-inner -->
+  </main>
+
+  <!-- ============================================================
+       CONTRIBUTORS MODAL
+  ============================================================ -->
+  <div class="modal-backdrop" id="modal-contributors" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    tabindex="-1">
+    <div class="modal" id="modal-panel">
+
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modal-title">Project Contributors</h2>
+          <p class="modal-subtitle">ISAMS · PLP-CCS BSIT-3A 2026</p>
+        </div>
+        <button class="modal-close" id="btn-modal-close" aria-label="Close contributors dialog">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+
+        <!-- Thesis / HTE Archiving -->
+        <div class="contrib-group">
+          <div class="contrib-group-header">
+            <span class="contrib-module-dot thesis"></span>
+            <span class="contrib-module-name">Thesis / HTE Archiving</span>
+          </div>
+          <ul class="contrib-list" aria-label="Thesis archiving contributors">
+            <li class="contrib-item lead">
+              <div class="contrib-avatar thesis-av">CQ</div>
+              Christopher A. Quinto
+              <span class="contrib-role">Lead · Project Manager</span>
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar thesis-av">CB</div>
+              Chrisha Balbacal
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar thesis-av">SM</div>
+              Sofia Manuel
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar thesis-av">KT</div>
+              Keith Tornea
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar thesis-av">AT</div>
+              Adrian Tulio
+            </li>
+          </ul>
+        </div>
+
+        <!-- Faculty Requirement Submission -->
+        <div class="contrib-group">
+          <div class="contrib-group-header">
+            <span class="contrib-module-dot faculty"></span>
+            <span class="contrib-module-name">Faculty Requirement Submission</span>
+          </div>
+          <ul class="contrib-list" aria-label="Faculty requirement contributors">
+            <li class="contrib-item lead">
+              <div class="contrib-avatar faculty-av">LB</div>
+              Louis Baruelo
+              <span class="contrib-role">Lead</span>
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar faculty-av">AA</div>
+              Ashley Asuncion
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar faculty-av">EL</div>
+              Ella Leonidas
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar faculty-av">MP</div>
+              Mark Palsimon
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar faculty-av">KR</div>
+              Kris Rivera
+            </li>
+          </ul>
+        </div>
+
+        <!-- Student Violation Management -->
+        <div class="contrib-group">
+          <div class="contrib-group-header">
+            <span class="contrib-module-dot violations"></span>
+            <span class="contrib-module-name">Student Violation Management</span>
+          </div>
+          <ul class="contrib-list" aria-label="Student violation contributors">
+            <li class="contrib-item lead">
+              <div class="contrib-avatar violations-av">MS</div>
+              Marc Soria
+              <span class="contrib-role">Lead</span>
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar violations-av">JS</div>
+              Jamil Saludo
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar violations-av">AS</div>
+              Apple Selosa
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar violations-av">AA</div>
+              Althea Alejandro
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar violations-av">EL</div>
+              Erlimar Labastida
+            </li>
+          </ul>
+        </div>
+
+        <!-- Laboratory Management -->
+        <div class="contrib-group">
+          <div class="contrib-group-header">
+            <span class="contrib-module-dot lab"></span>
+            <span class="contrib-module-name">Laboratory Management</span>
+          </div>
+          <ul class="contrib-list" aria-label="Laboratory management contributors">
+            <li class="contrib-item lead">
+              <div class="contrib-avatar lab-av">JF</div>
+              John Kurt Fajutagana
+              <span class="contrib-role">Lead</span>
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar lab-av">KY</div>
+              Kishiel Faith Yutuc
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar lab-av">CM</div>
+              Cristiana Montipolca
+            </li>
+            <li class="contrib-item">
+              <div class="contrib-avatar lab-av">RD</div>
+              Ruth Domino
+            </li>
+          </ul>
+        </div>
+
+      </div><!-- /.modal-body -->
+    </div><!-- /.modal -->
+  </div><!-- /.modal-backdrop -->
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script src="main.js"></script>
+  <script>
+    // Initialise Lucide icons after DOM is ready
+    lucide.createIcons();
+  </script>
+</body>
+
+</html>
